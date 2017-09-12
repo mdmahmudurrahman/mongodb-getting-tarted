@@ -5,7 +5,7 @@ describe('Updating user', () => {
   let md;
 
   beforeEach((done) => {
-    md = new User({ name: "Test user"});
+    md = new User({ name: "Test user", postCount: 20 });
     md.save()
       .then((user) => {
         console.log(user);
@@ -63,5 +63,17 @@ describe('Updating user', () => {
         done();
       });
   });
+
+  //TODO: Not working
+  // it('A user can have his postCount incremented by one', (done) => {
+  //   User.update({name: "Test name"}, {$inc: { postCount: 1 }})
+  //     .then(() => {
+  //       User.findOne({ name: "Test name"})
+  //     })
+  //     .then((user) => {
+  //       assert(user.postCount === 21);
+  //       done();
+  //     });
+  // });
 
 });
