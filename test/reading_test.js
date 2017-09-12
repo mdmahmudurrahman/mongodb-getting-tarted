@@ -21,4 +21,14 @@ describe("Reading users out of the database", () => {
         done();
       });
   });
+
+  it("find a user with a particular id", () => {
+    User.findOne(() => {
+      _id: user1._id
+    }).then((user) => {
+      console.log(user);
+      assert(user.name === 'Mahmud');
+    });
+
+  });
 });
