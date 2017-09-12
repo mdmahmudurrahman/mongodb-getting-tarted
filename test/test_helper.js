@@ -18,6 +18,7 @@ before((done) => {
 
 beforeEach((done) => {
   mongoose.connection.collections.users.drop(() => {
+    console.log("Collection deleted");
     done();
   });
 });
